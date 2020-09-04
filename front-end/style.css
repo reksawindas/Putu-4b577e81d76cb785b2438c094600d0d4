@@ -1,0 +1,16 @@
+body {
+    background-color: lightblue;
+}
+.header{
+    background-color: grey;
+}
+.header-text{
+    text-align: center;
+}
+/* .content{
+    width: 100%;
+    background-color: indianred;
+}
+.content-text{
+    width: 100%;
+} */

@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="style.css">
+<body>
+    <div class="header">
+        <div class="header-text">HALAMAN REGISTRASI</div>
+    </div>
+    <div class="content">
+        <table style="width: 50%;">
+            <tr>
+                <td>USERNAME :</td>
+                <td><input id="username" name="username" type="text" value=""></td>
+            </tr>
+            <tr>
+                <td>PASSWORD :</td>
+                <td><input id="password" name="password" type="password" value=""></td>
+            </tr>
+            <tr>
+                <td>REPASSWORD :</td>
+                <td><input id="repassword" name="repassword" type="password" value=""></td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="back"><a href="home.html">BACK</a></button>
+                
+                    <button id="register">REGISTER</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-1.7.1.js" type="text/javascript"></script>  
+<script>  
+    $(document).ready(function () {  
+        $("#register").click(function () {  
+            
+            var username = $('#username').val();  
+            var password = $('#password').val();  
+            var repassword = $('#repassword').val();  
+            $.ajax({  
+                type: "POST",
+                url: 'http://localhost/Putu-4b577e81d76cb785b2438c094600d0d4/back-end/register.php',  
+                data: {name: username, pass:password, repass:repassword},
+                success: function(data){
+                    alert(data);
+                    window.location.href = "login.html"
+                }
+            });  
+        });  
+    });  
+</script> 
